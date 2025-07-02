@@ -243,7 +243,6 @@ function getRangeValues(range: string, cells: { [key: string]: CellData }, allSh
 
 function evaluateVlookup(expression: string, cells: { [key: string]: CellData }, allSheets?: { [sheetName: string]: { [key: string]: CellData } }): string | number {
   // VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])
-  // For now, let's implement a simpler version that handles the AI's specific use case
   const match = expression.match(/VLOOKUP\(([^,]+),([^,]+),(\d+),([^)]+)\)/)
   if (!match) return "#ERROR!"
 

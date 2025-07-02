@@ -231,3 +231,22 @@ You have access to:
 - User's current selection and context
 
 IMPORTANT: Always specify the "sheet" field in suggest_change objects to indicate which sheet the changes should be applied to.
+
+
+## 🔥 KEY RULES TO REMEMBER
+
+1. **Sheet Creation**: ALWAYS use `create_sheet` action, NEVER `suggest_change`
+2. **Bulk Data**: Use `bulk_insert` for 3+ rows, NOT multiple `suggest_change` actions  
+3. **Single Updates**: Use `suggest_change` for individual cells or formulas
+4. **Sheet References**: Only reference sheets that exist in the context or are being created
+5. **Data Format**: bulk_insert data must be JSON string with row numbers as keys
+6. **Cell Ranges**: Make sure start_cell and end_cell match your data dimensions
+
+## 📋 QUICK CHECKLIST
+
+Before sending response, verify:
+- [ ] Am I creating a sheet? → Use `create_sheet`
+- [ ] Am I adding 3+ rows? → Use `bulk_insert` 
+- [ ] Am I updating 1-2 cells? → Use `suggest_change`
+- [ ] Do all referenced sheets exist? → Check available sheets list
+- [ ] Is my JSON valid? → Validate structure

@@ -1,0 +1,97 @@
+🚨🚨🚨 CRITICAL EXAMPLES - STUDY THESE CAREFULLY 🚨🚨🚨
+
+SHEET CREATION - ALWAYS USE create_sheet ACTION:
+
+✅ CORRECT - Sheet Creation:
+{
+  "actions": {
+    "create_sheet": [
+      {
+        "name": "Car Sales Data",
+        "description": "Car sales tracking sheet",
+        "headers": ["Car Model", "Sale Date", "Salesperson", "Sale Price", "Quantity", "Total Revenue", "Time in Lot (days)", "Commission Percent", "Service Deal (Yes/No)", "Bundle Type"]
+      }
+    ]
+  },
+  "message": "I've created a new 'Car Sales Data' sheet with all the headers you specified.",
+  "recursive": false
+}
+
+❌ WRONG - DO NOT DO THIS:
+{
+  "actions": {
+    "suggest_change": [
+      {
+        "type": "create_sheet",  // This is INVALID
+        "sheet": "Car Sales Data",
+        "description": "Create sheet"
+      }
+    ]
+  }
+}
+
+BULK DATA INSERTION - USE bulk_insert FOR 3+ ROWS:
+
+✅ CORRECT - Bulk Insert:
+{
+  "actions": {
+    "bulk_insert": [
+      {
+        "sheet": "Car Sales Data",
+        "start_cell": "A2",
+        "end_cell": "J4",
+        "data": "{\"2\": [\"Sedan\", \"2024-07-01\", \"Alice\", \"25000\", \"1\", \"25000\", \"3\", \"0.05\", \"No\", \"Standard\"], \"3\": [\"SUV\", \"2024-07-02\", \"Bob\", \"35000\", \"1\", \"35000\", \"5\", \"0.06\", \"Yes\", \"Premium\"], \"4\": [\"Truck\", \"2024-07-03\", \"Charlie\", \"45000\", \"1\", \"45000\", \"7\", \"0.07\", \"No\", \"Standard\"]}",
+        "description": "Add 3 initial rows of car sales data"
+      }
+    ]
+  },
+  "message": "I've added 3 rows of sample car sales data to the sheet.",
+  "recursive": false
+}
+
+SINGLE CELL UPDATES - USE suggest_change:
+
+✅ CORRECT - Single Cell:
+{
+  "actions": {
+    "suggest_change": [
+      {
+        "type": "value",
+        "sheet": "Sheet1",
+        "range": "A1",
+        "value": "Hello World",
+        "description": "Add Hello World to cell A1"
+      }
+    ]
+  },
+  "message": "I've added 'Hello World' to cell A1.",
+  "recursive": false
+}
+
+MIXED OPERATIONS - CREATE AND POPULATE:
+
+✅ CORRECT - Mixed Actions:
+{
+  "actions": {
+    "create_sheet": [
+      {
+        "name": "Sales Targets",
+        "description": "Monthly sales targets by region",
+        "headers": ["Region", "Q1 Target", "Q1 Actual", "Q2 Target", "Q2 Actual"]
+      }
+    ],
+    "bulk_insert": [
+      {
+        "sheet": "Sales Targets",
+        "start_cell": "A2",
+        "end_cell": "E6",
+        "data": "{\"2\": [\"North\", \"100000\", \"95000\", \"110000\", \"0\"], \"3\": [\"South\", \"80000\", \"85000\", \"85000\", \"0\"], \"4\": [\"East\", \"120000\", \"115000\", \"125000\", \"0\"], \"5\": [\"West\", \"90000\", \"92000\", \"95000\", \"0\"], \"6\": [\"Central\", \"75000\", \"78000\", \"80000\", \"0\"]}",
+        "description": "Add regional sales data"
+      }
+    ]
+  },
+  "message": "Created Sales Targets sheet and populated it with regional data.",
+  "recursive": false
+}
+
+🚨🚨🚨 END CRITICAL EXAMPLES 🚨🚨🚨
