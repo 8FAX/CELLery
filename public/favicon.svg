@@ -1,0 +1,16 @@
+<svg width="800" height="800" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient from top to bottom -->
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF8C00"/>
+      <stop offset="100%" stop-color="#8B0000"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer ring -->
+  <circle cx="200" cy="200" r="170" stroke="url(#gradient)" stroke-width="30" fill="none" />
+  <!-- Middle ring -->
+  <circle cx="200" cy="200" r="110" stroke="url(#gradient)" stroke-width="35" fill="none" />
+  <!-- Inner ring -->
+  <circle cx="200" cy="200" r="50" stroke="url(#gradient)" stroke-width="40" fill="none" />
+</svg>

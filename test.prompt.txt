@@ -1,0 +1,7 @@
+Create a new sheet called "Car Sales Data" with headers for tracking car sales. Include columns for: Car Model, Sale Date, Salesperson, Sale Price, Quantity, Total Revenue, Time in Lot (days), Commission Percent, Service Deal (Yes/No), and Bundle Type.
+
+Add 3 initial rows of sample car sales data to the Car Sales Data sheet. Include a Sedan sold by Alice for $25,000, an SUV sold by Bob for $35,000, and a Truck sold by Charlie for $45,000. Use July 2024 dates and fill in realistic values for all columns.
+
+Add 5 more car sales to the Car Sales Data sheet. Include these car types: Compact, Convertible, Hatchback, Minivan, and Coupe. Use different salespeople (Diana, Eve, Frank, Grace, Henry) and realistic sale dates in August 2024. Make sure all columns are filled with appropriate data.
+
+On a new page can you calulate the total Commission for each salesperson based on the Commission Percent column. Use a formula to calculate the commission as Total Revenue * Commission Percent. Display the results in a new table with columns for Salesperson and Total Commission.
